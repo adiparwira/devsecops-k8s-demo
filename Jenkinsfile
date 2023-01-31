@@ -7,7 +7,7 @@ pipeline {
               sh "mvn clean package -DskipTests=true"
               archive 'target/*.jar'
             }
-        }
+      }
 
       stage('Unit Tests - JUnit and Jacoco') {
         steps {
@@ -30,6 +30,12 @@ pipeline {
             pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
           }
         }
+      }
+
+      stage('Sonarqube - SAST') {
+            steps {
+              sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://192.168.56.11:9000 -Dsonar.login=1e800338b4946f91b92213bef790c3a46c4522d4"
+            }
       }
 
       stage('Docker Build and Push') {
