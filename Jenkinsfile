@@ -43,18 +43,29 @@ pipeline {
                   waitForQualityGate abortPipeline: true
                 }
               }
-            }
+            } 
+      }
+
+      stage('Vulnerability Scan - Docker ') {
+        steps {
+          sh "mvn dependency-check:check"
+        }
+        post {
+          always {
+            dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
+          }
+        }
       }
 
       stage('Docker Build and Push') {
-      steps {
-        withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
-          sh 'printenv'
-          sh 'docker build -t aryadi/numeric-app:""$GIT_COMMIT"" .'
-          sh 'docker push aryadi/numeric-app:""$GIT_COMMIT""'
+        steps {
+          withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
+            sh 'printenv'
+            sh 'docker build -t aryadi/numeric-app:""$GIT_COMMIT"" .'
+            sh 'docker push aryadi/numeric-app:""$GIT_COMMIT""'
+          }
         }
       }
-    }
 
     stage('Kubernetes Deployment - DEV') {
       steps {
