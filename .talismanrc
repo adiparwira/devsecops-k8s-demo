@@ -3,3 +3,13 @@ fileignoreconfig:
   checksum: b058bbb84595454d550863a6ae7fd501863acd9692ec3cc699bc6f76dd0e38a5
 - filename: Jenkinsfile
   checksum: 05891a4556511505db528dc9293ac770f9710ff0021bdf8fc4fcb785a5676a13
+- filename: handson/SonarQube_Quality_Gate.txt
+  checksum: 552b54e6ac17d056057bf6660feb2cf68ba4087703fe8f6c3d1e974152e511e7
+- filename: handson/SonarQube.txt
+  checksum: 59c9d58ab07c80100a780dd8b942821a793b9955b29461f140000fbb2078922d
+- filename: handson/Talisman_Demo.txt
+  checksum: 4e3114eaa5d28c39591244e4003de19ae3b2468d0c4a16f6fcc6a219e0be284a
+- filename: handson/SonarQube_Authentication.txt
+  checksum: 548e356b78bad2ffe2e9ac6d498224d7118bac7048b432920d083bd653b61363
+- filename: handson/Dependency_Check.txt
+  checksum: 6bb1ee81e2198b85510022e88e749b027dafe77f1828cf1be46f96ce490b3b3a
