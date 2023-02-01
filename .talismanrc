@@ -2,7 +2,7 @@ fileignoreconfig:
 - filename: sec_files/file3
   checksum: b058bbb84595454d550863a6ae7fd501863acd9692ec3cc699bc6f76dd0e38a5
 - filename: Jenkinsfile
-  checksum: 48fddd1696e04859547272450235d552c12b9c8f1f6170806c181404fc708974
+  checksum: 7264741effc922c05489362b24465c077d58dd3436fb1e4f745a0ff4ad765a02
 - filename: handson/SonarQube_Quality_Gate.txt
   checksum: 552b54e6ac17d056057bf6660feb2cf68ba4087703fe8f6c3d1e974152e511e7
 - filename: handson/SonarQube.txt
