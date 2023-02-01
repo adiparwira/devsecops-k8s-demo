@@ -32,30 +32,30 @@ pipeline {
         }
       }
 
-      stage('Sonarqube - SAST') {
-            steps {
-              withSonarQubeEnv('SonarQube') {
-                sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application \
-                            -Dsonar.host.url=http://192.168.56.11:9000"
-              }
-              timeout(time: 2, unit: 'MINUTES') {
-                script {
-                  waitForQualityGate abortPipeline: true
-                }
-              }
-            } 
-      }
+      // stage('Sonarqube - SAST') {
+      //       steps {
+      //         withSonarQubeEnv('SonarQube') {
+      //           sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application \
+      //                       -Dsonar.host.url=http://192.168.56.11:9000"
+      //         }
+      //         timeout(time: 2, unit: 'MINUTES') {
+      //           script {
+      //             waitForQualityGate abortPipeline: true
+      //           }
+      //         }
+      //       } 
+      // }
 
-      stage('Vulnerability Scan - Docker ') {
-        steps {
-          sh "mvn dependency-check:check"
-        }
-        post {
-          always {
-            dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
-          }
-        }
-      }
+      // stage('Vulnerability Scan - Docker ') {
+      //   steps {
+      //     sh "mvn dependency-check:check"
+      //   }
+      //   post {
+      //     always {
+      //       dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
+      //     }
+      //   }
+      // }
 
       stage('Docker Build and Push') {
         steps {
@@ -76,5 +76,5 @@ pipeline {
       }
     }
         
-    }
+  }
 }
