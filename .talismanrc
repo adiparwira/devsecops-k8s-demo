@@ -2,7 +2,7 @@ fileignoreconfig:
 - filename: sec_files/file3
   checksum: b058bbb84595454d550863a6ae7fd501863acd9692ec3cc699bc6f76dd0e38a5
 - filename: Jenkinsfile
-  checksum: fb2509e7be1ed262039680a55eb2c58de0492c4162495647354ee3ca04160736
+  checksum: e27cb91f1227d5e3547008b4a445b02ef250e316051540bb30452e80c7d8631c
 - filename: handson/SonarQube_Quality_Gate.txt
   checksum: 552b54e6ac17d056057bf6660feb2cf68ba4087703fe8f6c3d1e974152e511e7
 - filename: handson/SonarQube.txt
@@ -13,3 +13,5 @@ fileignoreconfig:
   checksum: 548e356b78bad2ffe2e9ac6d498224d7118bac7048b432920d083bd653b61363
 - filename: handson/Dependency_Check.txt
   checksum: 6bb1ee81e2198b85510022e88e749b027dafe77f1828cf1be46f96ce490b3b3a
+- filename: handson/Refactoring_Jenkinsfile.txt
+  checksum: e738ecc5622fe959f7313362efb3de5378a5371d4b711ddc512ea6c33cd31bfb
